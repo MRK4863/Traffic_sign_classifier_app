@@ -17,10 +17,6 @@ from flask import Flask, redirect, url_for, request, render_template
 from werkzeug.utils import secure_filename
 from gevent.pywsgi import WSGIServer
 #######################################################################
-#from tkinter import *
-#from tkinter.ttk import *
-from PIL import Image, ImageTk
-#from tkinter.filedialog import askopenfilename 
 from keras.models import load_model
 import keras
 import numpy as np
