@@ -22,3 +22,4 @@ Pillow
 pandas
 numpy
 tqdm
+scikit-learn
