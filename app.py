@@ -17,14 +17,6 @@ from flask import Flask, redirect, url_for, request, render_template
 from werkzeug.utils import secure_filename
 from gevent.pywsgi import WSGIServer
 #######################################################################
-from keras.models import load_model
-import keras
-import numpy as np
-import pandas as pd
-import cv2
-import os
-from werkzeug.utils import secure_filename
-
 
 #from tensorflow import keras 
 from PIL import Image, ImageOps
@@ -93,14 +85,6 @@ classes = { 1:'Speed limit (20km/h)',
 
 # Define a flask app
 app = Flask(__name__)
-
-# Model saved with Keras model.save()
-MODEL_PATH = os.path.join(os.getcwd(), "traffic_sign_model_grayscale_2.model")
-
-# Load your trained model
-model = load_model(MODEL_PATH)
-#model._make_predict_function()          # Necessary
-print('Model loaded. Start serving...')
 
 # You can also use pretrained model from Keras
 # Check https://keras.io/applications/
@@ -190,5 +174,10 @@ def upload():
 
 
 if __name__ == '__main__':
+    # Model saved with Keras model.save()
+    MODEL_PATH = os.path.join(os.getcwd(), "traffic_sign_model_grayscale_2.model")
+
+    # Load your trained model
+    model = load_model(MODEL_PATH)
     app.run(debug=True)
 
