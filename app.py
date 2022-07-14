@@ -92,7 +92,11 @@ app = Flask(__name__)
 #model = ResNet50(weights='imagenet')
 #model.save('')
 print('Model loaded......... Check http://127.0.0.1:5000/')
+# Model saved with Keras model.save()
+MODEL_PATH = os.path.join(os.getcwd(), "traffic_sign_model_grayscale_2.model")
 
+# Load your trained model
+model = load_model(MODEL_PATH)
 
 def model_predict(model,img_path):
     # message= request.get_json(force=True)
@@ -174,10 +178,6 @@ def upload():
 
 
 if __name__ == '__main__':
-    # Model saved with Keras model.save()
-    MODEL_PATH = os.path.join(os.getcwd(), "traffic_sign_model_grayscale_2.model")
 
-    # Load your trained model
-    model = load_model(MODEL_PATH)
     app.run(debug=True)
 
