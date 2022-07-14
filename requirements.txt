@@ -13,6 +13,7 @@ opencv-contrib-python-headless
 Pillow
 python-engineio
 python-socketio
+matplotlib
 redis
 six
 Werkzeug
